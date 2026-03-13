@@ -14,7 +14,7 @@ Production-grade rate limiting, retry, and circuit breaking library for Python.
 ## Installation
 
 ```bash
-pip install apiguard
+pip install GRID-APIGUARD
 ```
 
 ## Quick Start

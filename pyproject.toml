@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "apiguard"
+name = "GRID-APIGUARD"
 version = "0.1.0"
 description = "Production-grade rate limiting, retry, and circuit breaking library"
 readme = "README.md"
@@ -54,3 +54,6 @@ warn_unused_ignores = true
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["apiguard"]
