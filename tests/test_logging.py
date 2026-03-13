@@ -176,3 +176,12 @@ class TestEventFactories:
 
         # Event was logged (no exception raised)
         assert True
+
+    def test_log_event_default_logger(self) -> None:
+        """log_event uses default 'apiguard' logger when none provided."""
+        event = LogEvent(
+            event_type="test.default",
+            data={"key": "value"},
+        )
+        # Should not raise - uses logging.getLogger("apiguard")
+        log_event(event)

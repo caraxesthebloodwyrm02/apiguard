@@ -182,16 +182,10 @@ class AsyncRateLimitedClient:
         self._check_circuit()
         await self._acquire_tokens(tokens)
 
-        try:
-            if self._breaker is not None:
-                with self._breaker:
-                    return await self._request_with_retry(method, url, **kwargs)
-            else:
+        if self._breaker is not None:
+            with self._breaker:
                 return await self._request_with_retry(method, url, **kwargs)
-        except CircuitOpenError:
-            raise
-        except Exception:
-            raise
+        return await self._request_with_retry(method, url, **kwargs)
 
     async def get(self, url: str, **kwargs: Any) -> httpx.Response:
         """Make a GET request.

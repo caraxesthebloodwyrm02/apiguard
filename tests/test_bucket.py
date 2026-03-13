@@ -104,3 +104,9 @@ class TestTokenBucket:
         bucket = TokenBucket(capacity=10, refill_rate=10.0)
         assert bucket.acquire(tokens=5) is True
         assert bucket.available() == pytest.approx(5.0, rel=1e-3)
+
+    def test_enter_exit_noop(self) -> None:
+        """__enter__ returns self, __exit__ is a no-op."""
+        bucket = TokenBucket(capacity=100, refill_rate=10.0)
+        with bucket as b:
+            assert b is bucket

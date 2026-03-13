@@ -121,3 +121,14 @@ class TestRetryHandler:
 
         # Should have delayed approximately 0.1 seconds
         assert 0.09 < elapsed < 0.15
+
+    def test_retry_after_http_date_returns_none(self) -> None:
+        """Non-numeric Retry-After (HTTP-date) returns None."""
+        import httpx
+
+        retry = RetryHandler(max_retries=3)
+        response = httpx.Response(
+            status_code=429,
+            headers={"Retry-After": "Thu, 01 Jan 2026 00:00:00 GMT"},
+        )
+        assert retry._get_retry_after(response) is None
