@@ -1,32 +1,63 @@
 # Python bytecode
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
 
 # Virtual environments
 .venv/
+venv/
+ENV/
+env/
 
 # Testing
 .pytest_cache/
 .coverage
 htmlcov/
+.tox/
+.nox/
 
 # Type checking
 .mypy_cache/
+.dmypy.json
 
 # Linting
 .ruff_cache/
 
 # Build artifacts
 dist/
+build/
 *.egg-info/
+.eggs/
+*.egg
+
+# Environment
+.env
+.env.local
+.env.*.local
+*.env
 
 # IDE
 .idea/
 .vscode/
-
-# Temporary files
 *.swp
 *~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
 
 # Claude artifacts
 compass_artifact_*.md
+
+# Local development
+local_settings.py
+db.sqlite3
+db.sqlite3-journal

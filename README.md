@@ -165,7 +165,7 @@ pip install -e ".[dev]"
 ### Testing
 
 ```bash
-pytest                       # run all 60 tests
+pytest                       # run all 106 tests
 pytest --cov=apiguard        # with coverage
 pytest tests/test_bucket.py  # single module
 ```
