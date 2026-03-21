@@ -228,9 +228,7 @@ class TestAsyncRateLimitedClient:
         client = AsyncRateLimitedClient(bucket=bucket, retry=retry)
 
         mock_http = AsyncMock()
-        mock_http.request = AsyncMock(
-            return_value=httpx.Response(status_code=503)
-        )
+        mock_http.request = AsyncMock(return_value=httpx.Response(status_code=503))
         mock_http.aclose = AsyncMock()
 
         with patch("apiguard.adapters.httpx.httpx.AsyncClient", return_value=mock_http):

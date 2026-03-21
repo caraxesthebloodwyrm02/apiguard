@@ -90,9 +90,7 @@ def create_rate_limit_event(
         Log event for the rate limit action.
     """
     event_type = (
-        EventType.RATE_LIMIT_ACQUIRED.value
-        if acquired
-        else EventType.RATE_LIMIT_EXHAUSTED.value
+        EventType.RATE_LIMIT_ACQUIRED.value if acquired else EventType.RATE_LIMIT_EXHAUSTED.value
     )
     data: dict[str, Any] = {
         "tokens_requested": tokens,
@@ -130,9 +128,7 @@ def create_retry_event(
         data["error"] = error
 
     event_type = (
-        EventType.RETRY_ATTEMPT.value
-        if attempt < max_retries
-        else EventType.RETRY_EXHAUSTED.value
+        EventType.RETRY_ATTEMPT.value if attempt < max_retries else EventType.RETRY_EXHAUSTED.value
     )
     return LogEvent(event_type=event_type, data=data)
 

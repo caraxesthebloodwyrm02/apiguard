@@ -217,9 +217,7 @@ class TestCircuitBreaker:
                     with lock:
                         failure_count[0] += 1
 
-        threads = [
-            threading.Thread(target=successful_calls) for _ in range(5)
-        ] + [
+        threads = [threading.Thread(target=successful_calls) for _ in range(5)] + [
             threading.Thread(target=failed_calls) for _ in range(5)
         ]
 
