@@ -57,6 +57,9 @@ build/
 # Claude artifacts
 compass_artifact_*.md
 
+# Archive
+.archive/
+
 # Local development
 local_settings.py
 db.sqlite3
