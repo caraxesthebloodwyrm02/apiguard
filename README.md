@@ -157,25 +157,23 @@ async with AsyncRateLimitedClient(
 ### Setup
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -e ".[dev]"
+uv sync --group dev
 ```
 
 ### Testing
 
 ```bash
-pytest                       # run all 106 tests
-pytest --cov=apiguard        # with coverage
-pytest tests/test_bucket.py  # single module
+uv run pytest                       # run all tests
+uv run pytest --cov=apiguard        # with coverage
+uv run pytest tests/test_bucket.py  # single module
 ```
 
 ### Linting & Type Checking
 
 ```bash
-ruff check .                 # lint
-ruff format .                # format
-mypy apiguard                # strict type checking
+uv run ruff check .                 # lint
+uv run ruff format .                # format
+uv run mypy apiguard                # strict type checking
 ```
 
 ### Project Layout
@@ -194,7 +192,7 @@ apiguard/
 tests/            Mirrors apiguard/ — one test file per module
 ```
 
-Requires Python ≥ 3.11. Build system: Hatchling.
+Requires Python ≥ 3.11. Build system: Hatchling. Published on [PyPI as GRID-APIGUARD](https://pypi.org/project/GRID-APIGUARD/).
 
 ## License
 
