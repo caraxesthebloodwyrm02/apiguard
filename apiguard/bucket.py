@@ -78,7 +78,7 @@ class TokenBucket:
             return self._tokens
 
     @contextmanager
-    def __call__(self, tokens: int = 1) -> Generator[None, None, None]:
+    def __call__(self, tokens: int = 1) -> Generator[None]:
         """Context manager for acquiring tokens.
 
         Args:
