@@ -7,21 +7,24 @@ name = "GRID-APIGUARD"
 version = "0.1.0"
 description = "Production-grade rate limiting, retry, and circuit breaking library"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 requires-python = ">=3.13"
 authors = [
     {name = "APIGuard Contributors"}
 ]
+
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: System :: Networking",
     "Framework :: AsyncIO",
 ]
+
 dependencies = [
     "httpx>=0.27.0",
 ]
@@ -34,6 +37,11 @@ dev = [
     "ruff>=0.8.0",
     "mypy>=1.13.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/shinychoes/apiguard"
+Repository = "https://github.com/shinychoes/apiguard"
+Issues = "https://github.com/shinychoes/apiguard/issues"
 
 [tool.ruff]
 target-version = "py313"
