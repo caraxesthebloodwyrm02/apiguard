@@ -1,0 +1,8 @@
+{
+  "test": "token_acquisition_latency",
+  "iterations": 10000,
+  "total_seconds": 0.00232324399985373,
+  "avg_ms_per_op": 0.000232324399985373,
+  "ops_per_second": 4304326.192440223,
+  "timestamp": 1778116235.625107
+}
